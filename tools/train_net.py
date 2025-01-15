@@ -38,6 +38,8 @@ from detectron2.evaluation import (
 )
 from detectron2.modeling import GeneralizedRCNNWithTTA
 
+import detectron2.backbone.build as bbuild
+
 
 def build_evaluator(cfg, dataset_name, output_folder=None):
     """
@@ -141,6 +143,8 @@ def main(args):
     consider writing your own training loop (see plain_train_net.py) or
     subclassing the trainer.
     """
+    print("")
+    print(bbuild.BACKBONE_REGISTRY)
     trainer = Trainer(cfg)
     trainer.resume_or_load(resume=args.resume)
     if cfg.TEST.AUG.ENABLED:
