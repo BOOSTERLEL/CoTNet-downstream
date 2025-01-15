@@ -16,5 +16,10 @@ from .vit import ViT, SimpleFeaturePyramid, get_vit_lr_decay_rate
 from .mvit import MViT
 from .swin import SwinTransformer
 
+# new added.
+from .cotnet import CoTNet
+from .cotnext import CoTNeXt
+from .secotnetd import SECoTNetD
+
 __all__ = [k for k in globals().keys() if not k.startswith("_")]
 # TODO can expose more resnet blocks after careful consideration
