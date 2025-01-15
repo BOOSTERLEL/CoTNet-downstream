@@ -38,7 +38,7 @@ from detectron2.evaluation import (
 )
 from detectron2.modeling import GeneralizedRCNNWithTTA
 
-import detectron2.backbone.build as bbuild
+import detectron2.modeling.backbone.build as bbuild
 
 
 def build_evaluator(cfg, dataset_name, output_folder=None):
