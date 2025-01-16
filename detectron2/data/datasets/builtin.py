@@ -40,11 +40,11 @@ _PREDEFINED_SPLITS_COCO["coco"] = {
         "coco/val2014",
         "coco/annotations/instances_valminusminival2014.json",
     ),
-    "coco_2017_train": ("coco/train2017", "coco/annotations/instances_train2017.json"),
-    "coco_2017_val": ("coco/val2017", "coco/annotations/instances_val2017.json"),
-    "coco_2017_test": ("coco/test2017", "coco/annotations/image_info_test2017.json"),
-    "coco_2017_test-dev": ("coco/test2017", "coco/annotations/image_info_test-dev2017.json"),
-    "coco_2017_val_100": ("coco/val2017", "coco/annotations/instances_val2017_100.json"),
+    "coco_2017_train": ("coco2017/train2017", "coco/annotations/instances_train2017.json"),
+    "coco_2017_val": ("coco2017/val2017", "coco/annotations/instances_val2017.json"),
+    "coco_2017_test": ("coco2017/test2017", "coco/annotations/image_info_test2017.json"),
+    "coco_2017_test-dev": ("coco2017/test2017", "coco/annotations/image_info_test-dev2017.json"),
+    "coco_2017_val_100": ("coco2017/val2017", "coco/annotations/instances_val2017_100.json"),
 }
 
 _PREDEFINED_SPLITS_COCO["coco_person"] = {
@@ -62,13 +62,13 @@ _PREDEFINED_SPLITS_COCO["coco_person"] = {
         "coco/annotations/person_keypoints_valminusminival2014.json",
     ),
     "keypoints_coco_2017_train": (
-        "coco/train2017",
-        "coco/annotations/person_keypoints_train2017.json",
+        "coco2017/train2017",
+        "coco2017/annotations/person_keypoints_train2017.json",
     ),
-    "keypoints_coco_2017_val": ("coco/val2017", "coco/annotations/person_keypoints_val2017.json"),
+    "keypoints_coco_2017_val": ("coco2017/val2017", "coco/annotations/person_keypoints_val2017.json"),
     "keypoints_coco_2017_val_100": (
-        "coco/val2017",
-        "coco/annotations/person_keypoints_val2017_100.json",
+        "coco2017/val2017",
+        "coco2017/annotations/person_keypoints_val2017_100.json",
     ),
 }
 
@@ -76,24 +76,24 @@ _PREDEFINED_SPLITS_COCO["coco_person"] = {
 _PREDEFINED_SPLITS_COCO_PANOPTIC = {
     "coco_2017_train_panoptic": (
         # This is the original panoptic annotation directory
-        "coco/panoptic_train2017",
-        "coco/annotations/panoptic_train2017.json",
+        "coco2017/panoptic_train2017",
+        "coco2017/annotations/panoptic_train2017.json",
         # This directory contains semantic annotations that are
         # converted from panoptic annotations.
         # It is used by PanopticFPN.
         # You can use the script at detectron2/datasets/prepare_panoptic_fpn.py
         # to create these directories.
-        "coco/panoptic_stuff_train2017",
+        "coco2017/panoptic_stuff_train2017",
     ),
     "coco_2017_val_panoptic": (
-        "coco/panoptic_val2017",
-        "coco/annotations/panoptic_val2017.json",
-        "coco/panoptic_stuff_val2017",
+        "coco2017/panoptic_val2017",
+        "coco2017/annotations/panoptic_val2017.json",
+        "coco2017/panoptic_stuff_val2017",
     ),
     "coco_2017_val_100_panoptic": (
-        "coco/panoptic_val2017_100",
-        "coco/annotations/panoptic_val2017_100.json",
-        "coco/panoptic_stuff_val2017_100",
+        "coco2017/panoptic_val2017_100",
+        "coco2017/annotations/panoptic_val2017_100.json",
+        "coco2017/panoptic_stuff_val2017_100",
     ),
 }
 
@@ -250,7 +250,9 @@ def register_all_ade20k(root):
 # Internally at fb, we register them elsewhere
 if __name__.endswith(".builtin"):
     # Assume pre-defined datasets live in `./datasets`.
-    _root = os.path.expanduser(os.getenv("DETECTRON2_DATASETS", "datasets"))
+    # _root = os.path.expanduser(os.getenv("DETECTRON2_DATASETS", "datasets"))
+
+    _root = os.path.expanduser(os.getenv("DETECTRON2_DATASETS", "/kaggle/input/coco-2017-dataset"))
     register_all_coco(_root)
     register_all_lvis(_root)
     register_all_cityscapes(_root)

@@ -145,6 +145,7 @@ def main(args):
     """
     print("")
     print(bbuild.BACKBONE_REGISTRY)
+
     trainer = Trainer(cfg)
     trainer.resume_or_load(resume=args.resume)
     if cfg.TEST.AUG.ENABLED:
