@@ -33,39 +33,39 @@ from .pascal_voc import register_pascal_voc
 
 _PREDEFINED_SPLITS_COCO = {}
 _PREDEFINED_SPLITS_COCO["coco"] = {
-    "coco_2014_train": ("coco/train2014", "coco/annotations/instances_train2014.json"),
-    "coco_2014_val": ("coco/val2014", "coco/annotations/instances_val2014.json"),
-    "coco_2014_minival": ("coco/val2014", "coco/annotations/instances_minival2014.json"),
+    "coco_2014_train": ("coco2014/train2014", "coco2014/annotations/instances_train2014.json"),
+    "coco_2014_val": ("coco2014/val2014", "coco2014/annotations/instances_val2014.json"),
+    "coco_2014_minival": ("coco2014/val2014", "coco2014/annotations/instances_minival2014.json"),
     "coco_2014_valminusminival": (
-        "coco/val2014",
-        "coco/annotations/instances_valminusminival2014.json",
+        "coco2014/val2014",
+        "coco2014/annotations/instances_valminusminival2014.json",
     ),
-    "coco_2017_train": ("coco2017/train2017", "coco/annotations/instances_train2017.json"),
-    "coco_2017_val": ("coco2017/val2017", "coco/annotations/instances_val2017.json"),
-    "coco_2017_test": ("coco2017/test2017", "coco/annotations/image_info_test2017.json"),
-    "coco_2017_test-dev": ("coco2017/test2017", "coco/annotations/image_info_test-dev2017.json"),
-    "coco_2017_val_100": ("coco2017/val2017", "coco/annotations/instances_val2017_100.json"),
+    "coco_2017_train": ("coco2017/train2017", "coco2017/annotations/instances_train2017.json"),
+    "coco_2017_val": ("coco2017/val2017", "coco2017/annotations/instances_val2017.json"),
+    "coco_2017_test": ("coco2017/test2017", "coco2017/annotations/image_info_test2017.json"),
+    "coco_2017_test-dev": ("coco2017/test2017", "coco2017/annotations/image_info_test-dev2017.json"),
+    "coco_2017_val_100": ("coco2017/val2017", "coco2017/annotations/instances_val2017_100.json"),
 }
 
 _PREDEFINED_SPLITS_COCO["coco_person"] = {
     "keypoints_coco_2014_train": (
-        "coco/train2014",
-        "coco/annotations/person_keypoints_train2014.json",
+        "coco2014/train2014",
+        "coco2014/annotations/person_keypoints_train2014.json",
     ),
-    "keypoints_coco_2014_val": ("coco/val2014", "coco/annotations/person_keypoints_val2014.json"),
+    "keypoints_coco_2014_val": ("coco2014/val2014", "coco2014/annotations/person_keypoints_val2014.json"),
     "keypoints_coco_2014_minival": (
-        "coco/val2014",
-        "coco/annotations/person_keypoints_minival2014.json",
+        "coco2014/val2014",
+        "coco2014/annotations/person_keypoints_minival2014.json",
     ),
     "keypoints_coco_2014_valminusminival": (
-        "coco/val2014",
-        "coco/annotations/person_keypoints_valminusminival2014.json",
+        "coco2014/val2014",
+        "coco2014/annotations/person_keypoints_valminusminival2014.json",
     ),
     "keypoints_coco_2017_train": (
         "coco2017/train2017",
         "coco2017/annotations/person_keypoints_train2017.json",
     ),
-    "keypoints_coco_2017_val": ("coco2017/val2017", "coco/annotations/person_keypoints_val2017.json"),
+    "keypoints_coco_2017_val": ("coco2017/val2017", "coco2017/annotations/person_keypoints_val2017.json"),
     "keypoints_coco_2017_val_100": (
         "coco2017/val2017",
         "coco2017/annotations/person_keypoints_val2017_100.json",
@@ -252,7 +252,7 @@ if __name__.endswith(".builtin"):
     # Assume pre-defined datasets live in `./datasets`.
     # _root = os.path.expanduser(os.getenv("DETECTRON2_DATASETS", "datasets"))
 
-    _root = os.path.expanduser(os.getenv("DETECTRON2_DATASETS", "/kaggle/input/coco-2017-dataset"))
+    _root = os.path.expanduser(os.getenv("DETECTRON2_DATASETS", "coco-2017-dataset"))
     register_all_coco(_root)
     register_all_lvis(_root)
     register_all_cityscapes(_root)
