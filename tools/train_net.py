@@ -16,6 +16,7 @@ this file as an example of how to use the library.
 You may want to write your own script with your datasets and other customizations.
 """
 
+import warnings
 import logging
 import os
 from collections import OrderedDict
@@ -124,6 +125,8 @@ def setup(args):
 
 
 def main(args):
+    warnings.filterwarnings("ignore", message=".*compile_with_cache.*")
+
     cfg = setup(args)
 
     if args.eval_only:
