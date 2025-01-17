@@ -252,7 +252,7 @@ if __name__.endswith(".builtin"):
     # Assume pre-defined datasets live in `./datasets`.
     # _root = os.path.expanduser(os.getenv("DETECTRON2_DATASETS", "datasets"))
 
-    _root = os.path.expanduser(os.getenv("DETECTRON2_DATASETS", "coco-2017-dataset"))
+    _root = os.path.expanduser(os.getenv("DETECTRON2_DATASETS", "/kaggle/input/coco-2017-dataset"))
     register_all_coco(_root)
     register_all_lvis(_root)
     register_all_cityscapes(_root)
