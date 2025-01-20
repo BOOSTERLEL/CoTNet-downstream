@@ -1,6 +1,6 @@
 _BASE_: "../Base-RCNN-FPN.yaml"
 MODEL:
-  WEIGHTS: "/kaggle/input/cotnet50-350epoch/cotdet.pth"
+  WEIGHTS: "/kaggle/input/cotnet_checkpoint/pytorch/default/3/model.pth"
   MASK_ON: True
   BACKBONE:
     NAME: "build_cotnet_fpn_backbone"
