@@ -1,6 +1,6 @@
 _BASE_: "../Base-RCNN-FPN.yaml"
 MODEL:
-  WEIGHTS: "CoTNet101-350epoch/cotdet.pth"
+  WEIGHTS: "/kaggle/input/cotnet101-350epoch/cotdet.pth"
   MASK_ON: False
   BACKBONE:
     NAME: "build_cotnet_fpn_backbone"
@@ -25,7 +25,7 @@ MODEL:
 #DATALOADER:
 #  NUM_WORKERS: 4
 SOLVER:
-  IMS_PER_BATCH: 16
+  IMS_PER_BATCH: 2
   BASE_LR: 0.02
   STEPS: (60000, 80000)
   MAX_ITER: 90000
